@@ -1,0 +1,8 @@
+{% extends "@MineWeb/Homepage/index.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+    <div class="alert alert-info">{{ 'registration.check_email'|trans({'%email%': user.email}) }}</div>
+    {{ parent() }}
+{% endblock content %}

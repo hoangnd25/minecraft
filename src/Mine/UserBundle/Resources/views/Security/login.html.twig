@@ -1,0 +1,43 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            <div id="login" class="widget login col-sm-6 col-sm-offset-3">
+                <div><h4 class="widget-title">Login</h4></div>
+                <form class="form-horizontal" action="{{ path("fos_user_security_check") }}" method="post">
+                    {% trans_default_domain 'FOSUserBundle' %}
+
+                    {% if error %}
+                        <div class="alert alert-warning">{{ error|trans }}</div>
+                    {% endif %}
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    <div class="form-group">
+                        <label for="username">{{ 'security.login.username'|trans }}</label>
+                        <input type="text" id="username" name="_username" value="" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">{{ 'security.login.password'|trans }}</label>
+                        <input type="password" id="password" name="_password" autocomplete="off" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked" />
+                        <label class="checkbox" for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                    </div>
+
+                    <input type="submit" name="wp-submit" id="wp-submit" class="btn btn-mine" value="Log In">
+                    <a class="btn btn-mine" href="{{ path('fos_user_registration_register') }}">Register</a>
+                </form>
+                <p>
+                    <br>
+                    <a href="{{ path('fos_user_resetting_request') }}" title="Password Lost and Found">Lost your password?</a>
+                </p>
+                <p><a style="color:white;" href="{{ path('homepage') }}" title="Are you lost?">← Back to homepage</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock container %}

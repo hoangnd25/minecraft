@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            <div id="login" class="widget login col-sm-8 col-sm-offset-2">
+                <div><h4 class="widget-title">Reset password</h4></div>
+
+                {% block message %}
+                {% endblock message %}
+
+                <p style="font-size: 16px">Forget your password? enter your email address or username bellow and we'll reset it for you</p><br>
+                <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                    <div>
+                        {% if invalid_username is defined %}
+                            <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</p>
+                        {% endif %}
+                        <label for="username">{{ 'resetting.request.username'|trans }}</label>
+                        <input type="text" id="username" name="username" required="required" />
+                    </div>
+                    <div>
+                        <input class="btn btn-mine" type="submit" value="{{ 'resetting.request.submit'|trans }}" />
+                    </div>
+                </form>
+                <br>
+                <p><a style="color:white;" href="{{ path('homepage') }}" title="Are you lost?">← Back to homepage</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock container %}
+
+
+

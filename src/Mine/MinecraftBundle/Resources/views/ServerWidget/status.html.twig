@@ -1,0 +1,16 @@
+<div class="widget" id="server-status">
+    <h4 class="widget-title">Server status</h4>
+    <div class="widget-content">
+        <p>Server: mineCLGT.com</p>
+        <p>Status:
+        {% if server.status %}
+            <span class="alert alert-success" style="padding: 5px;">Online</span>
+        {% else %}
+            <span class="alert alert-danger" style="padding: 5px;">Online</span>
+        {% endif %}
+        </p>
+        <p>> Ping: {{ server.latency *1000 }}mms </p>
+        <p>> {{ server.motd }}</p>
+        <p>> Players: {{ server.players.online }}/{{ server.players.max }}</p>
+    </div>
+</div>

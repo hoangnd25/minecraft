@@ -1,0 +1,9 @@
+{% extends "MineUserBundle:Resetting:request.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block message %}
+<div class="alert alert-info">
+{{ 'resetting.check_email'|trans({'%email%': email}) }}
+</div>
+{% endblock %}

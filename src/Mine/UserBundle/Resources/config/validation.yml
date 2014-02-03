@@ -1,0 +1,15 @@
+Mine\UserBundle\Entity\User:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [email]
+            message: 'This email address is already used'
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [username]
+            message: 'This username is already used'
+    properties:
+        plainPassword:
+            - Length:
+                min: 6
+                max: 2000
+                minMessage: fos_user.password.short
+                groups: [VirgosRegistration,VirgosProfile,VirgosResetPassword,VirgosChangePassword]

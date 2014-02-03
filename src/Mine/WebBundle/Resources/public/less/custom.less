@@ -1,0 +1,254 @@
+@font-face { font-family: "Minecraft Regular"; src: url("/bundles/mineweb/font/minecraft_font.eot?") format("eot"), url("/bundles/mineweb/font/minecraft_font.woff") format("woff"), url("/bundles/mineweb/font/minecraft_font.ttf") format("truetype"), url("/bundles/mineweb/font/minecraft_font.svg#Minecraft") format("svg"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "MineCrafter 2.0 Regular"; src: url("/bundles/mineweb/font/minecrafter_20.eot?") format("eot"), url("/bundles/mineweb/font/minecrafter_20.woff") format("woff"), url("/bundles/mineweb/font/minecrafter_20.ttf") format("truetype"), url("/bundles/mineweb/font/minecrafter_20.svg#MineCrafter-2.0") format("svg"); font-weight: normal; font-style: normal; }
+
+
+body{
+    background: url("/bundles/mineweb/img/bg.png") repeat;
+}
+
+input[type="text"]:focus, textarea:focus, input[type="password"], input[type="email"] {
+    outline: none;
+}
+
+iframe{
+    width: 100%;
+    border: none;
+}
+
+h1,h2{
+    text-transform: uppercase;
+    font-family: "MineCrafter 2.0 Regular";
+}
+
+.banner-text{
+    padding-top: 20px;
+    h1,h3{
+        text-transform: uppercase;
+        text-align: center;
+        font-family: "MineCrafter 2.0 Regular";
+        color: #FCF6E8;
+    }
+    h1{
+        font-size: 55px;
+    }
+    h3{
+        font-size: 31px;
+    }
+
+}
+
+.navbar.navbar-mine{
+    .navbar-brand {
+        padding: 0px;
+        padding-left: 10px;
+        font-family: "MineCrafter 2.0 Regular";
+        font-size: 24px;
+        color: #FCF6E8;
+        line-height: 71px;
+        font-weight: 800;
+        text-decoration: none;
+    }
+
+    li a{
+        display: block;
+        background: url(/bundles/mineweb/img/sprite-crafty.png) #AA8C55;
+        border: 2px solid #56472A;
+        -moz-box-shadow: -2px -2px 3px #333;
+        -webkit-box-shadow: -2px -2px 3px #333;
+        box-shadow: -2px -2px 3px #333;
+        color: #000;
+        font-family: "Minecraft Regular", Arial;
+        text-decoration: none;
+        margin: 8px;
+        padding: 10px 10px 11px;
+        text-transform: capitalize;
+    }
+
+    li a:hover{
+        color: #FFF;
+        background-position: 0px -45px;
+    }
+
+    .navbar-collapse{
+        padding: 0;
+    }
+
+    .navbar-toggle{
+        color: black;
+        background: url(/bundles/mineweb/img/sprite-crafty.png) #AA8C55;
+    }
+}
+
+article{
+    .title{
+        margin-top: 25px;
+        padding-bottom: 15px;
+    }
+    margin-top: 20px;
+    background-color: #eee;
+    padding: 25px;
+}
+article:before{
+    background: url(/bundles/mineweb/img/tree.png) #008c02 repeat-x;
+    display: block;
+    height: 45px;
+    content: " ";
+    border-bottom: 4px solid #C7C7C7;
+    margin-top: -25px;
+    margin-left: -25px;
+    margin-right: -25px;
+}
+
+article.world-map{
+    padding: 0px;
+    iframe{
+        margin-bottom: -5px;
+        min-height: 80%;
+    }
+}
+article.world-map:before{
+    margin: 0px;
+    border-bottom:none;
+}
+
+article.change-password{
+    font-family: "Minecraft Regular", Arial;
+}
+
+input.btn.btn-mine[type="submit"],.btn.btn-mine{
+    background: #AFAFAF;
+    border-left: 4px solid #CFCFCF;
+    border-top: 4px solid #CFCFCF;
+    border-bottom: 4px solid #5C5C5C;
+    border-right: 4px solid #5C5C5C;
+    border-radius:0px;
+    color: #FFF;
+    text-shadow: 2px 2px #3F3F3F
+}
+input.btn.btn-mine[type="submit"]:hover,.btn.btn-mine:hover{
+    background: #a3a3a3;
+    border-left: 4px solid #5C5C5C;
+    border-top: 4px solid #5C5C5C;
+    border-bottom: 4px solid #CFCFCF;
+    border-right: 4px solid #CFCFCF;
+}
+
+input[type="text"],input[type="password"],input[type="search"],input[type="email"]{
+    height: 30px;
+    text-indent: 7px;
+    border-color: rgb(92, 86, 86) !important;
+    border-style: inset;
+    border-width: 2px;
+    background-color: #5F5F5F;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=);
+    padding-right: 0px;
+    background-attachment: scroll;
+    cursor: auto;
+    background-position: 100% 50%;
+    background-repeat: no-repeat no-repeat;
+    color: #FFF;
+    text-shadow: 2px 2px #3F3F3F;
+    border-radius: 0;
+}
+
+input[type="checkbox"] {
+    display: none;
+
+    &:checked + label:before {
+        color: white;
+        font-size: 11px;
+        line-height: 8px;
+        text-indent: 2px;
+        content: 'x';
+        font-family: Arial;
+    }
+}
+
+form label.checkbox,form label.radio {
+    position: relative;
+    display: inline-block;
+    padding: 0px 0px 0px 20px !important;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+}
+
+form label.checkbox {
+
+    &:before {
+        top: 0;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        margin-top: 4px;
+        background-color: #5F5F5F;
+        border: 2px solid #484343;
+    }
+}
+
+.widget{
+    margin-top: 20px;
+    background-color: #eee;
+    padding: 25px;
+
+    .widget-title{
+        margin-top: -30px;
+        height: 41px;
+        text-transform: uppercase;
+        font-family: "MineCrafter 2.0 Regular";
+        color:#FCF6E8;
+        font-size: 17px;
+        line-height: 24px;
+        text-shadow: 2px 2px #3F3F3F
+    }
+    .widget-content{
+
+        font-family: "Minecraft Regular", Arial;
+    }
+}
+
+.widget:before{
+    background: url(/bundles/mineweb/img/stone.png) #008c02 repeat-x;
+    border: 2px solid #949191;
+    display: block;
+    content: " ";
+    margin-top: -25px;
+    margin-left: -25px;
+    margin-right: -25px;
+    height: 45px;
+}
+
+.widget.login{
+    font-family: "Minecraft Regular", Arial;
+    .form-group{
+        margin-left: 0;
+        input[type="text"],input[type="password"],input[type="search"],input[type="email"]{
+            width: 90%;
+        }
+    }
+    .widget-title{
+        height: 30px;
+        color: #fff;
+        text-shadow:2px 2px #383838;
+        margin-top: 0;
+    }
+//    background: #928481;
+//    border-left: 5px solid #BAB0A7;
+//    border-top: 5px solid #BAB0A7;
+//    border-bottom: 5px solid #5A4749;
+//    border-right: 5px solid #5A4749;
+    background: #AFAFAF;
+    border-left: 5px solid #CFCFCF;
+    border-top: 5px solid #CFCFCF;
+    border-bottom: 5px solid #5C5C5C;
+    border-right: 5px solid #5C5C5C;
+}
+
+.widget.login:before{
+    background:none;
+    border:none;
+    display:none;
+}

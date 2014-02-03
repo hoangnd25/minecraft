@@ -1,0 +1,56 @@
+<div id="login" class="widget login">
+    {% if app.user %}
+        <div><h4 class="widget-title">User account</h4></div>
+
+        <div class="widget-content">
+            <p><strong>Hello {{ app.user.username }}!</strong></p>
+            <p>- Balance: </p>
+            <p>
+                <a href="#">> Update details</a>
+            </p>
+            <p>
+                <a href="{{ path('fos_user_change_password') }}">> Change password</a>
+            </p>
+            <p>
+                <a href="{{ path('fos_user_security_logout') }}">> Logout</a>
+            </p>
+        </div>
+    {% else %}
+        <div><h4 class="widget-title">Login</h4></div>
+        <form class="form-horizontal" action="{{ path("fos_user_security_check") }}" method="post">
+            {% trans_default_domain 'FOSUserBundle' %}
+            <input type="hidden" name="_csrf_token" value="{{ csrfAuthenticate() }}" />
+            <div class="form-group">
+                <label for="username">{{ 'security.login.username'|trans }}</label>
+                <input type="text" id="username" name="_username" value="" required="required" />
+            </div>
+            <div class="form-group">
+                <label for="password">{{ 'security.login.password'|trans }}</label>
+                <input type="password" id="password" name="_password" autocomplete="off" required="required" />
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked" />
+                <label class="checkbox" for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+            </div>
+
+            <input type="submit" name="wp-submit" id="wp-submit" class="btn btn-mine" value="Log In">
+            <a class="btn btn-mine" href="{{ path('fos_user_registration_register') }}">Register</a>
+        </form>
+        <p>
+            <br>
+            <a href="{{ path('fos_user_resetting_request') }}" title="Password Lost and Found">Lost your password?</a>
+        </p>
+    {% endif %}
+</div>
+
+<div class="widget" id="server-status">
+    <h4 class="widget-title">Server status</h4>
+    <div class="widget-content">
+        <p>Server: mineCLGT.com</p>
+        <p>Status:
+        </p>
+        <p>> Ping:</p>
+        <p>> Message</p>
+        <p>> Players:</p>
+    </div>
+</div>

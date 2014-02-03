@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            <div id="login" class="widget login col-sm-6 col-sm-offset-3">
+                <div><h4 class="widget-title">Register</h4></div>
+                <p style="font-size: 16px">You can login game and website using this account</p><br>
+                <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="form-horizontal">
+                    <div class="form-group">
+                        {{ form_row(form.email) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.username) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.plainPassword) }}
+                    </div>
+
+                    {{ form_rest(form) }}
+
+                    <div class="">
+                        <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn btn-mine" />
+                    </div>
+                </form>
+
+                <p>
+                    <br>
+                    <a href="{{ path('fos_user_resetting_request') }}" title="Password Lost and Found">Lost your password?</a>
+                </p>
+                <p><a style="color:white;" href="{{ path('homepage') }}" title="Are you lost?">← Back to homepage</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock container %}
