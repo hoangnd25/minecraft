@@ -113,6 +113,6 @@ mopa_bootstrap:
         dns_prefetch:
             - '//ajax.googleapis.com'
         google:
-            wt: 'xxx'
+            wt: 'xxgpRO23m15XyLQII8iwDxL-1MHqaXCqMXGIdZKGvfI'
             analytics: 'UA-47734275-1'
         diagnostic_mode: false
