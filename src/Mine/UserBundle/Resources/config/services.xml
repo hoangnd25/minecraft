@@ -32,5 +32,9 @@
             <argument type="service" id="session" />
             <tag name="kernel.event_subscriber"/>
         </service>
+
+        <service id="mine_user.listener.user_ip" class="Mine\UserBundle\EventListener\UserIPListener">
+            <tag name="kernel.event_subscriber"/>
+        </service>
     </services>
 </container>

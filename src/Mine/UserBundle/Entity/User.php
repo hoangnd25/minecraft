@@ -43,6 +43,88 @@ class User extends BaseUser
      */
     protected $ip;
 
+    /**
+     * @param mixed $ip
+     */
+    public function setIp($ip)
+    {
+        $this->ip = $ip;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIp()
+    {
+        return $this->ip;
+    }
+
+    /**
+     * @param mixed $lastGameLogin
+     */
+    public function setLastGameLogin($lastGameLogin)
+    {
+        $this->lastGameLogin = $lastGameLogin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastGameLogin()
+    {
+        return $this->lastGameLogin;
+    }
+
+    /**
+     * @param mixed $x
+     */
+    public function setX($x)
+    {
+        $this->x = $x;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getX()
+    {
+        return $this->x;
+    }
+
+    /**
+     * @param mixed $y
+     */
+    public function setY($y)
+    {
+        $this->y = $y;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getY()
+    {
+        return $this->y;
+    }
+
+    /**
+     * @param mixed $z
+     */
+    public function setZ($z)
+    {
+        $this->z = $z;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getZ()
+    {
+        return $this->z;
+    }
+
+
+
     public function __construct()
     {
         parent::__construct();
