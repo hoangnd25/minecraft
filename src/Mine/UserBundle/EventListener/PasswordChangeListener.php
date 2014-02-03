@@ -23,10 +23,12 @@ class PasswordChangeListener implements EventSubscriberInterface {
         $listeners = array();
         $listeners[FOSUserEvents::CHANGE_PASSWORD_SUCCESS] = 'onPasswordChangeSuccess';
         $listeners[FOSUserEvents::RESETTING_RESET_SUCCESS] = 'onPasswordChangeSuccess';
+        $listeners[FOSUserEvents::REGISTRATION_SUCCESS] = 'onPasswordChangeSuccess';
         return $listeners;
     }
 
     public function onPasswordChangeSuccess(FormEvent $event) {
+        $this->session->getFlashBag()->add('info','The game server may take up to 5 mins to update your account. Sorry for the inconvenience');
         $url = $this->router->generate('homepage');
         $event->setResponse(new RedirectResponse($url));
     }
