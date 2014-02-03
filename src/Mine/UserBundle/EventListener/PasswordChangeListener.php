@@ -28,7 +28,11 @@ class PasswordChangeListener implements EventSubscriberInterface {
     }
 
     public function onPasswordChangeSuccess(FormEvent $event) {
+
         $this->session->getFlashBag()->add('info','The game server may take up to 5 mins to update your account. Sorry for the inconvenience');
+        if(FOSUserEvents::REGISTRATION_SUCCESS == $event->getName()){
+            $this->session->getFlashBag()->add('info','An email is sent to your email contains a link to activate your account');
+        }
         $url = $this->router->generate('homepage');
         $event->setResponse(new RedirectResponse($url));
     }
