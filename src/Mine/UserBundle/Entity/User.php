@@ -34,6 +34,11 @@ class User extends BaseUser
     protected $z;
 
     /**
+     * @ORM\Column(length=100)
+     */
+    protected $world;
+
+    /**
      * @ORM\Column(type="integer",length=20,name="lastlogin",nullable=true))
      */
     protected $lastGameLogin;
@@ -127,6 +132,11 @@ class User extends BaseUser
 
     public function __construct()
     {
+        $this->x = 0;
+        $this->y = 0;
+        $this->z = 0;
+        $this->world = 'world';
+
         parent::__construct();
     }
 }
